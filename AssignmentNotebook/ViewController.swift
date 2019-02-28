@@ -98,7 +98,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         return UISwipeActionsConfiguration(actions: [modifyAction])
     }
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nvc = segue.destination as! DetailsViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let assignment = assignments[indexPath.row]
+            nvc.passedAssignment = assignment
+        }
+    }
 
 }
 
