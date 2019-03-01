@@ -14,6 +14,7 @@
 		5F59D3FC22245CEF00F9CD56 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F59D3FB22245CEF00F9CD56 /* Assets.xcassets */; };
 		5F59D3FF22245CEF00F9CD56 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F59D3FD22245CEF00F9CD56 /* LaunchScreen.storyboard */; };
 		5F7C493022284FAA0065FE3F /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7C492F22284FAA0065FE3F /* DetailsViewController.swift */; };
+		5F7C4932222852D20065FE3F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F7C4931222852D20065FE3F /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5F59D3FE22245CEF00F9CD56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F59D40022245CEF00F9CD56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F7C492F22284FAA0065FE3F /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		5F7C4931222852D20065FE3F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				5F33345A2226FE910051686C /* Assignment.swift */,
 				5F59D3F822245CE600F9CD56 /* Main.storyboard */,
 				5F7C492F22284FAA0065FE3F /* DetailsViewController.swift */,
+				5F7C4931222852D20065FE3F /* AddViewController.swift */,
 				5F59D3FB22245CEF00F9CD56 /* Assets.xcassets */,
 				5F59D3FD22245CEF00F9CD56 /* LaunchScreen.storyboard */,
 				5F59D40022245CEF00F9CD56 /* Info.plist */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F7C4932222852D20065FE3F /* AddViewController.swift in Sources */,
 				5F33345B2226FE910051686C /* Assignment.swift in Sources */,
 				5F59D3F722245CE600F9CD56 /* ViewController.swift in Sources */,
 				5F59D3F522245CE600F9CD56 /* AppDelegate.swift in Sources */,

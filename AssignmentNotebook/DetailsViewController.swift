@@ -12,14 +12,16 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var assignLabel: UILabel!
     @IBOutlet weak var dueLabel: UILabel!
+    let formatter = DateFormatter()
     var passedAssignment : Assignment!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        formatter.dateFormat = "MM/dd/yyyy"
         self.title = passedAssignment.classsss
         classLabel.text = passedAssignment.classsss
         assignLabel.text = passedAssignment.name
-        dueLabel.text = String(passedAssignment.due)
+        dueLabel.text = formatter.string(from: passedAssignment.due)
 
         // Do any additional setup after loading the view.
     }

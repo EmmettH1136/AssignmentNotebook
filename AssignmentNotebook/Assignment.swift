@@ -10,10 +10,10 @@ import Foundation
 
 class Assignment : Codable {
     var name : String
-    var due : String
+    var due : Date
     var classsss : String
     
-    init(_ name : String, _ classs : String, _ due : String) {
+    init(_ name : String, _ classs : String, _ due : Date) {
         self.name = name
         classsss = classs
         self.due = due
@@ -27,7 +27,7 @@ class Assignment : Codable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name = try container.decode(String.self, forKey: .name)
         classsss = try container.decode(String.self, forKey: .classsss)
-        due = try container.decode(String.self, forKey: .due)
+        due = try container.decode(Date.self, forKey: .due)
     }
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
