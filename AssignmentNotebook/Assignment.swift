@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Assignment : Codable {
+class Assignment : Codable, Comparable {
     var name : String
     var due : Date
     var classsss : String
@@ -34,6 +34,13 @@ class Assignment : Codable {
         try container.encode(name, forKey: .name)
         try container.encode(classsss, forKey: .classsss)
         try container.encode(due, forKey: .due)
+    }
+    static func ==(lhs: Assignment, rhs: Assignment) -> Bool {
+        return lhs.due == rhs.due
+    }
+    
+    static func <(lhs: Assignment, rhs: Assignment) -> Bool {
+        return lhs.due < rhs.due
     }
     
 }

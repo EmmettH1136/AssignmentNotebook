@@ -9,6 +9,7 @@
 import UIKit
 
 class AddViewController: UIViewController {
+    let userDefaults = UserDefaults.standard
     @IBOutlet weak var classTextField: UITextField!
     @IBOutlet weak var assignTextField: UITextField!
     @IBOutlet weak var datePicker: UIDatePicker!

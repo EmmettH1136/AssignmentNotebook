@@ -7,11 +7,11 @@
 //
 
 import UIKit
-let userDefaults = UserDefaults.standard
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var assignments : [Assignment] = []
     let formatter = DateFormatter()
+    let userDefaults = UserDefaults.standard
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -25,10 +25,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let paragraph = Assignment("Intro Paragraph", "World Lit", paragraphDate!)
         let assignmentNotebook = Assignment("Assignment Notebook App", "Mobile Apps", assignDate!)
         assignments = [mathpages, paragraph, assignmentNotebook]
+        assignments.sort(by: { $0.due < $1.due })
+        print(assignments[0].due)
         tableView.reloadData()
         if let object = UserDefaults.standard.data(forKey: "List") {
             if let objectDecoded = try? JSONDecoder().decode([Assignment].self, from: object) as [Assignment] {
                 assignments = objectDecoded
+                assignments = assignments.sorted(by: <)
+                print(assignments[0].due)
+                tableView.reloadData()
             }
         } else {
             if let encoded = try? JSONEncoder().encode(assignments){
@@ -63,6 +68,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             let alertController = UIAlertController(title: "Delete?", message: "Are you sure you want to delete \(self.assignments[indexPath.row].name)?", preferredStyle: .alert)
             let yesAction = UIAlertAction(title: "Yes", style: .default, handler: {action in
                 self.assignments.remove(at: indexPath.row)
+                self.assignments.sort(by: { $0.due < $1.due })
                 self.tableView.reloadData()
                 if let encoded = try? JSONEncoder().encode(self.assignments){
                     UserDefaults.standard.set(encoded, forKey: "List")
@@ -104,6 +110,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print("Encoding Failed")
             }
         }
+        assignments.sort(by: { $0.due < $1.due })
         tableView.reloadData()
     }
 

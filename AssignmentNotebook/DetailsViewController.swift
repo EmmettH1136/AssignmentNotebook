@@ -9,6 +9,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
+    let userDefaults = UserDefaults.standard
     @IBOutlet weak var classLabel: UILabel!
     @IBOutlet weak var assignLabel: UILabel!
     @IBOutlet weak var dueLabel: UILabel!
